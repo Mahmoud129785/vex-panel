@@ -1,0 +1,163 @@
+<html>
+
+<head>
+    <title>Bot-Hosting.net | Blog</title>
+    <link rel="icon" type="image/png" href="/assets/img/bothosting2.png" />
+    <link rel="stylesheet" href="/blog/assets/styles.css">
+    <link rel="stylesheet" href="/assets/css/style_main.min.css">
+    <meta charset="UTF-8">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#1f02f9" />
+    <meta name="Language" content="en" />
+    <meta name="google-site-verification" content="vQuxUxYxP_RNLS3LHfKPGMFV_tNZWDTq3zWmxSjKaT4" />
+    <meta name="keywords" content="hosting,host,discord,discord bots,free hosting,blog" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Embed -->
+    <meta property="og:type" content="website" />
+    <meta name="description"
+        content="A host designed for Discord bots. Available and online 24/7. Free Discord bot hosting with powerful machines. Easy to setup and launches instantly." />
+    <meta name="author" content="Bot-Hosting.net | Blog">
+    <meta property="og:title" content="Bot-Hosting.net | Blog" />
+    <meta property="og:site_name" content="Bot-Hosting.net | Blog" />
+    <meta property="og:url" content="bot-hosting.net" />
+    <meta property="og:image" content="/assets/img/bothosting2.png" />
+    <meta property="og:description"
+        content="A host designed for Discord bots. Available and online 24/7. Free Discord bot hosting with powerful machines. Easy to setup and launches instantly." />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@bothosting" />
+    <meta name="twitter:title" content="Bot-Hosting.net | Blog" />
+    <meta name="twitter:description"
+        content="A host designed for Discord bots. Available and online 24/7. Free Discord bot hosting with powerful machines. Easy to setup and launches instantly." />
+    <meta name="apple-mobile-web-app-title" content="Bot-Hosting.net | Blog" />
+    <meta name="application-name"
+        content="A host designed for Discord bots. Available and online 24/7. Free Discord bot hosting with powerful machines. Easy to setup and launches instantly." />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header id="navbar">
+        <nav class="navbar-container container">
+            <a href="/" class="home-link">
+                <div class="navbar-logo"><img src="/assets/img/bothosting.png" alt=""></div>
+                Bot-Hosting.net
+            </a>
+            <button type="button" class="navbar-toggle" aria-controls="navbar-menu" aria-label="Toggle menu"
+                aria-expanded="false">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div id="navbar-menu">
+                <ul class="navbar-links">
+                    <li class="navbar-item"><a class="navbar-link" href="/">Home</a></li>
+                    <li class="navbar-item"><a class="navbar-link" href="/blog">Blog</a></li>
+                    <li class="navbar-item" style="background-color: #2970cc; border-radius: 5px;"><a
+                            class="navbar-link" href="/panel" style>Get Started</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <script>
+        const navbar = document.getElementById("navbar");
+        const navbarToggle = navbar.querySelector(".navbar-toggle");
+    
+        function openMobileNavbar() {
+            navbar.classList.add("opened");
+            navbarToggle.setAttribute("aria-expanded", "true");
+        }
+    
+        function closeMobileNavbar() {
+            navbar.classList.remove("opened");
+            navbarToggle.setAttribute("aria-expanded", "false");
+        }
+    
+        navbarToggle.addEventListener("click", () => {
+            if (navbar.classList.contains("opened")) {
+                closeMobileNavbar();
+            } else {
+                openMobileNavbar();
+            }
+        });
+    
+        const navbarMenu = navbar.querySelector("#navbar-menu");
+        const navbarLinksContainer = navbar.querySelector(".navbar-links");
+    
+        navbarLinksContainer.addEventListener("click", (clickEvent) => {
+            clickEvent.stopPropagation();
+        });
+    
+        navbarMenu.addEventListener("click", closeMobileNavbar);
+    </script>
+
+    <div class="homeContent">
+        <h1 class="pageTitle">Bot-Hosting.net Blog</h1>
+
+        <a href="/blog/creating-schedules-in-nodejs-with-the-cron-library">
+            <div class="postPreview">
+                <h1>Creating Schedules in Node.js with the Cron library</h1>
+                <p class="postDate">12 September 2023</p>
+                <p>In your Node.js server, you may wish to run code at certain times, whether that be at the start of every month, at the start of every hour...</p>
+            </div>
+        </a>
+
+        <a href="/blog/web-scraping-in-nodejs-with-cheerio">
+            <div class="postPreview">
+                <h1>Web scraping in Node.js with Cheerio</h1>
+                <p class="postDate">26 April 2023</p>
+                <p>Web scraping is the process of extracting public data from websites. There are many different ways to scrape websites...</p>
+            </div>
+        </a>
+
+        <a href="/blog/building-a-discord-bot-that-scales">
+            <div class="postPreview">
+                <h1>Building a Discord bot that scales</h1>
+                <p class="postDate">25 April 2023</p>
+                <p>Many Discord bots are developed with the goal of becoming as big as possible, but this sort of growth comes with an interesting challenge...</p>
+            </div>
+        </a>
+
+        <a href="/blog/creating-a-web-server-in-nodejs-with-express">
+            <div class="postPreview">
+                <h1>Creating a web server in Node.js with Express</h1>
+                <p class="postDate">26 November 2022</p>
+                <p>One of the main uses of Node.js is running web servers to accept and handle HTTP requests. The most
+                    popular library for doing this is Express...</p>
+            </div>
+        </a>
+    </div>
+
+    <div style="height:150px;overflow:hidden;background-color: rgb(44 47 51);">
+        <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height:100%;width:100%">
+            <path d="M-2.54,28.13 C143.62,210.69 298.81,-81.41 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                style="stroke:none;fill:#26272b"></path>
+        </svg>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="title">
+                    <h2>Bot-Hosting.net</h2>
+                    <p>Have you ever wished for a free, good quality Discord bot bot? If yes, Bot-Hosting.net is the
+                        host
+                        for you. We have built a host designed for Discord bots.</p>
+                </div>
+                <div class="link">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><i class="fa fa-angle-double-right"></i><a href="/about"> About</a></li>
+                        <li><i class="fa fa-angle-double-right"></i><a href="https://wiki.bot-hosting.net"> Knowledgebase</a></li>
+                        <li><i class="fa fa-angle-double-right"></i><a href="/legal"> Terms & Conditions and Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="copyright">
+                    <h5>Copyright 2023 ©. All Rights Reserved. Website developed by the Bot-Hosting.net team</h5>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
