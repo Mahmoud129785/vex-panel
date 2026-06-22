@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<head>
+    <!doctype html>
+    <html lang="en">
+    <link rel="icon" type="image/png" href="/assets/img/bothosting2.png" />
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+    <link href="/assets/css/style_main.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css"
+        integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+    <noscript>JavaScript Not Supported !</noscript>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#1f02f9" />
+    <meta name="Language" content="en" />
+    <meta name="keywords" content="hosting,host,discord,discord bots,acceptable use" />
+    <meta property="og:type" content="website" />
+    <meta name="description"
+        content="Acceptable Use Policy for Bot-Hosting.net - rules governing the use of our Discord bot hosting services." />
+    <meta name="author" content="Bot-Hosting.net | A Free Host For Discord Bots">
+    <meta property="og:title" content="Bot-Hosting.net | Acceptable Use Policy" />
+    <meta property="og:site_name" content="Bot-Hosting.net | A Free Host For Discord Bots" />
+    <meta property="og:url" content="bot-hosting.net/acceptable-use" />
+    <meta property="og:image" content="/assets/img/bothosting2.png" />
+    <meta property="og:description"
+        content="Acceptable Use Policy for Bot-Hosting.net - rules governing the use of our Discord bot hosting services." />
+    <title>Bot-Hosting.net | Acceptable Use Policy</title>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S0VHSF9NEZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-S0VHSF9NEZ');
+    </script>
+    </html>
+</head>
+<header id="navbar">
+    <nav class="navbar-container container">
+        <a href="/" class="home-link">
+            <div class="navbar-logo"><img src="/assets/img/bothosting.png" alt=""></div>
+            Bot-Hosting.net
+        </a>
+        <button type="button" class="navbar-toggle" aria-controls="navbar-menu" aria-label="Toggle menu"
+            aria-expanded="false">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <div id="navbar-menu">
+            <ul class="navbar-links">
+                <li class="navbar-item"><a class="navbar-link" href="/">Home</a></li>
+                <li class="navbar-item"><a class="navbar-link" href="/blog">Blog</a></li>
+                <li class="navbar-item" style="background-color: #2970cc; border-radius: 5px;"><a class="navbar-link"
+                        href="/panel" style>Get Started</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<div class="cookie-container">
+    <p>We use cookies to give you the best experience on our site. Read our <a href="/legal">legal
+            mentions</a> for further informations.</p>
+    <button class="cookie-btn">Okay</button>
+</div>
+<script src="../assets/js/cookie.js"></script>
+<script>
+    const navbar = document.getElementById("navbar");
+    const navbarToggle = navbar.querySelector(".navbar-toggle");
+
+    function openMobileNavbar() {
+        navbar.classList.add("opened");
+        navbarToggle.setAttribute("aria-expanded", "true");
+    }
+
+    function closeMobileNavbar() {
+        navbar.classList.remove("opened");
+        navbarToggle.setAttribute("aria-expanded", "false");
+    }
+
+    navbarToggle.addEventListener("click", () => {
+        if (navbar.classList.contains("opened")) {
+            closeMobileNavbar();
+        } else {
+            openMobileNavbar();
+        }
+    });
+
+    const navbarMenu = navbar.querySelector("#navbar-menu");
+    const navbarLinksContainer = navbar.querySelector(".navbar-links");
+
+    navbarLinksContainer.addEventListener("click", (clickEvent) => {
+        clickEvent.stopPropagation();
+    });
+
+    navbarMenu.addEventListener("click", closeMobileNavbar);
+</script>
+<style>
+    body {
+        background: #2c2f33 !important;
+    }
+</style>
+
+<body>
+    <div class="about">
+        <article>
+            <h1 style="align-content: center;">Bot-Hosting.net Acceptable Use Policy</h1>
+            <h5 style="align-content: center;">This policy defines what is allowed and what is prohibited when using our Discord bot hosting services. By using Bot-Hosting.net, you agree to comply with the rules set out below.</h5>
+            <p style="color: rgb(189, 189, 189);">Last updated: 10/05/2026</p>
+            <br>
+
+            <h2>1. Scope and covered users</h2>
+            <p>This Acceptable Use Policy ("AUP") applies to anyone who accesses or uses Bot-Hosting.net, including:</p>
+            <ul style="list-style-type: disc; font-size: 18px; margin-top: 15px; margin-left: 10px;">
+                <li>Visitors to our website</li>
+                <li>Account holders using our free or paid hosting plans</li>
+                <li>Sub-users granted access to a server by another account holder</li>
+                <li>Any third party connecting to or interacting with services hosted on our infrastructure</li>
+            </ul>
+            <p>Our services consist of containerised hosting environments primarily designed for running Discord bots, along with related features such as databases, file storage, backups, and console access. Account holders are responsible for ensuring that any sub-user or third party they grant access to also complies with this policy.</p>
+
+            <h2>2. Permitted use</h2>
+            <p>Our services are intended for the lawful operation of Discord bots and similar lightweight applications. Permitted use includes, but is not limited to:</p>
+            <ul style="list-style-type: disc; font-size: 18px; margin-top: 15px; margin-left: 10px;">
+                <li>Hosting Discord bots that comply with Discord's Terms of Service and Developer Policy</li>
+                <li>Running automation, moderation, utility, music, or community-management bots</li>
+                <li>Operating small-scale web applications, APIs, or backend services compatible with our supported runtimes</li>
+                <li>Storing files and data reasonably required for the operation of your hosted application</li>
+            </ul>
+
+            <h2>3. Prohibited use</h2>
+            <p>You may not use our services for any activity that is illegal, harmful, abusive, or that violates the rights of others. The following activities are strictly prohibited:</p>
+
+            <h3 style="margin-top: 20px;">3.1 Illegal content and activities</h3>
+            <ul style="list-style-type: disc; font-size: 18px; margin-top: 15px; margin-left: 10px;">
+                <li>Any activity unlawful under the laws of France, the European Union, or the country in which you reside</li>
+                <li>Storing, hosting, or distributing child sexual abuse material (CSAM) or any content sexualising minors</li>
+                <li>Hosting content that promotes terrorism, violent extremism, or incites violence against individuals or groups</li>
+                <li>Distributing pirated software, copyrighted material, counterfeit goods, or content infringing intellectual property rights</li>
+                <li>Hosting or distributing malware, spyware, ransomware, viruses, or any malicious code</li>
+                <li>Facilitating human trafficking, illegal drug sales, illegal firearms sales, or any other criminal activity</li>
+            </ul>
+
+            <h3 style="margin-top: 20px;">3.2 Abuse of Discord and third-party platforms</h3>
+            <ul style="list-style-type: disc; font-size: 18px; margin-top: 15px; margin-left: 10px;">
+                <li>Operating selfbots or any bot that violates Discord's Terms of Service or Developer Policy</li>
+                <li>Mass-messaging, spamming, or unsolicited advertising on Discord or any other platform</li>
+                <li>Raid bots, nuke bots, or any tool designed to disrupt Discord servers or harass their members</li>
+                <li>Token grabbers, account stealers, or any tool designed to compromise user credentials</li>
+                <li>Bypassing rate limits, anti-spam measures, or other protections of any third-party service</li>
+            </ul>
+
+            <h3 style="margin-top: 20px;">3.3 Attacks and harmful activity</h3>
+            <ul style="list-style-type: disc; font-size: 18px; margin-top: 15px; margin-left: 10px;">
+                <li>Launching denial-of-service (DoS/DDoS) attacks against any system or network</li>
+                <li>Running brute-force, credential-stuffing, or password-guessing attacks</li>
+                <li>Performing unauthorised port scanning, vulnerability scanning, or reconnaissance against systems you do not own</li>
+                <li>Phishing, social engineering, or any attempt to deceive users into disclosing sensitive information</li>
+                <li>Hosting command-and-control (C2) infrastructure for botnets or other malicious networks</li>
+            </ul>
+
+            <h3 style="margin-top: 20px;">3.4 Resource abuse</h3>
+            <ul style="list-style-type: disc; font-size: 18px; margin-top: 15px; margin-left: 10px;">
+                <li>Cryptocurrency mining or any form of distributed computing primarily designed to consume CPU, GPU, memory, or bandwidth</li>
+                <li>Excessive disk usage unrelated to the legitimate operation of a Discord bot or hosted application</li>
+                <li>Using our services as a proxy, VPN, or tunnel to disguise the origin of network traffic</li>
+                <li>Operating public file-sharing, streaming, or content-distribution services that disproportionately consume bandwidth or storage</li>
+                <li>Running multiple accounts to circumvent free-tier limits or any other restriction</li>
+            </ul>
+
+            <h3 style="margin-top: 20px;">3.5 Harmful and abusive content</h3>
+            <ul style="list-style-type: disc; font-size: 18px; margin-top: 15px; margin-left: 10px;">
+                <li>Harassment, threats, doxing, or stalking of individuals</li>
+                <li>Hate speech or content discriminating against individuals or groups based on race, ethnicity, religion, gender, sexual orientation, disability, or any other protected characteristic</li>
+                <li>Non-consensual intimate imagery, deepfakes, or content created without the subject's consent</li>
+                <li>Content promoting self-harm, suicide, or eating disorders</li>
+            </ul>
+
+            <h3 style="margin-top: 20px;">3.6 Fraud and payment abuse</h3>
+            <ul style="list-style-type: disc; font-size: 18px; margin-top: 15px; margin-left: 10px;">
+                <li>Use of stolen, fraudulent, or unauthorised payment methods</li>
+                <li>Filing fraudulent chargebacks or payment disputes</li>
+                <li>Abusing referral, affiliate, or promotional programs through fake accounts or other deceptive means</li>
+                <li>Reselling or redistributing our services without prior written authorisation</li>
+            </ul>
+
+            <h2>4. Compliance with laws and sanctions</h2>
+            <p>You are responsible for ensuring that your use of our services complies with all applicable laws and regulations, including but not limited to data protection laws (GDPR), intellectual property laws, and consumer protection laws.</p>
+            <p>Our services may not be used by, or for the benefit of, individuals, entities, or jurisdictions subject to economic sanctions, trade embargoes, or restrictive measures imposed by France, the European Union, the United Nations, the United Kingdom, or the United States (including OFAC sanctions). This includes, without limitation, comprehensively sanctioned territories and any individuals or entities listed on applicable sanctions lists.</p>
+
+            <h2>5. Responsibility for sub-users and third parties</h2>
+            <p>If you grant access to your server to other users (sub-users), invite contributors, or operate a bot that interacts with end users on Discord or elsewhere, you remain fully responsible for:</p>
+            <ul style="list-style-type: disc; font-size: 18px; margin-top: 15px; margin-left: 10px;">
+                <li>The actions of any sub-user you have authorised on your server</li>
+                <li>The behaviour of bots and applications you operate, and any harm they may cause to third parties</li>
+                <li>Compliance by your bots with the terms of service of any platform they interact with, including Discord</li>
+                <li>Handling personal data collected by your bots or applications in accordance with applicable data protection laws, including providing your own privacy notice to your end users where required</li>
+            </ul>
+
+            <h2>6. Reporting abuse</h2>
+            <p>If you become aware of any violation of this policy, including content hosted on our infrastructure that you believe is illegal or harmful, you may report it to <a href="/cdn-cgi/l/email-protection#64050611170124060b10490c0b17100d0a034a0a0110" style="color: rgb(142, 169, 204);"><span class="__cf_email__" data-cfemail="29484b5c5a4c694b465d0441465a5d40474e07474c5d">[email&#160;protected]</span></a>. We review all reports and take appropriate action.</p>
+
+            <h2>7. Monitoring, enforcement, and sanctions</h2>
+            <p>We reserve the right, but are under no obligation, to monitor activity on our services to detect and prevent violations of this policy. We may use automated tools, manual review, and information received from third parties (including abuse reports, hosting providers, and law-enforcement authorities).</p>
+            <p>Where a violation is suspected or confirmed, we may take any of the following actions, with or without prior notice and at our sole discretion:</p>
+            <ul style="list-style-type: disc; font-size: 18px; margin-top: 15px; margin-left: 10px;">
+                <li>Issue a warning to the account holder</li>
+                <li>Throttle, restrict, or temporarily suspend access to all or part of our services</li>
+                <li>Remove or quarantine specific content, files, or processes</li>
+                <li>Permanently terminate the account and any associated services, with or without refund</li>
+                <li>Retain logs and other relevant data for the purpose of investigation, fraud prevention, or legal compliance</li>
+                <li>Cooperate with law-enforcement authorities and disclose information where legally required</li>
+                <li>Pursue any other legal remedy available to us</li>
+            </ul>
+            <p>The severity of the action will depend on the nature and seriousness of the violation. Serious violations, such as illegal content or attacks against third parties, will result in immediate termination without notice.</p>
+
+            <h2>8. Changes to this policy</h2>
+            <p>We may update this Acceptable Use Policy from time to time to reflect changes in our services, applicable laws, or industry practices. The most recent version will always be available on this page, with the "Last updated" date shown at the top. Continued use of our services after a revision constitutes acceptance of the updated policy.</p>
+
+            <br />
+            <p style="color: rgb(185, 185, 185);">Contact email address: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5635393822373522163439227b3e3925223f383178383322">[email&#160;protected]</a></p>
+            <p style="color: rgb(185, 185, 185);">Abuse reports: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="20414255534560424f540d484f5354494e470e4e4554">[email&#160;protected]</a></p>
+        </article>
+    </div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
