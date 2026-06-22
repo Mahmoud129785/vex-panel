@@ -1,0 +1,165 @@
+<html>
+
+<head>
+    <title>Bot-Hosting.net | Blog</title>
+    <link rel="icon" type="image/png" href="/assets/img/bothosting2.png" />
+    <link rel="stylesheet" href="/blog/assets/styles.css">
+    <link rel="stylesheet" href="/assets/css/style_main.min.css">
+    <meta charset="UTF-8">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#1f02f9" />
+    <meta name="Language" content="en" />
+    <meta name="google-site-verification" content="vQuxUxYxP_RNLS3LHfKPGMFV_tNZWDTq3zWmxSjKaT4" />
+    <meta name="keywords" content="hosting,host,discord,discord bots,free hosting,blog" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Embed -->
+    <meta property="og:type" content="website" />
+    <meta name="description"
+        content="A host designed for Discord bots. Available and online 24/7. Free Discord bot hosting with powerful machines. Easy to setup and launches instantly." />
+    <meta name="author" content="Bot-Hosting.net | Blog">
+    <meta property="og:title" content="Building a Discord bot that scales" />
+    <meta property="og:author" content="Bot-Hosting.net | Blog" />
+    <meta property="og:site_name" content="Bot-Hosting.net | Blog" />
+    <meta property="og:url" content="bot-hosting.net" />
+    <meta property="og:image" content="/assets/img/bothosting2.png" />
+    <meta property="og:description"
+        content="A host designed for Discord bots. Available and online 24/7. Free Discord bot hosting with powerful machines. Easy to setup and launches instantly." />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@bothosting" />
+    <meta name="twitter:title" content="Bot-Hosting.net | Blog" />
+    <meta name="twitter:author" content="Building a Discord bot that scales" />
+    <meta name="twitter:description"
+        content="A host designed for Discord bots. Available and online 24/7. Free Discord bot hosting with powerful machines. Easy to setup and launches instantly." />
+    <meta name="apple-mobile-web-app-title" content="Bot-Hosting.net | Blog" />
+    <meta name="application-name"
+        content="A host designed for Discord bots. Available and online 24/7. Free Discord bot hosting with powerful machines. Easy to setup and launches instantly." />
+
+    <!-- Highlight js to highlight code -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github-dark-dimmed.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script defer>hljs.highlightAll();</script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header id="navbar">
+        <nav class="navbar-container container">
+            <a href="/" class="home-link">
+                <div class="navbar-logo"><img src="/assets/img/bothosting.png" alt=""></div>
+                Bot-Hosting.net
+            </a>
+            <button type="button" class="navbar-toggle" aria-controls="navbar-menu" aria-label="Toggle menu"
+                aria-expanded="false">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div id="navbar-menu">
+                <ul class="navbar-links">
+                    <li class="navbar-item"><a class="navbar-link" href="/">Home</a></li>
+                    <li class="navbar-item"><a class="navbar-link" href="/blog">Blog</a></li>
+                    <li class="navbar-item" style="background-color: #2970cc; border-radius: 5px;"><a
+                            class="navbar-link" href="/panel" style>Get Started</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <script>
+        const navbar = document.getElementById("navbar");
+        const navbarToggle = navbar.querySelector(".navbar-toggle");
+    
+        function openMobileNavbar() {
+            navbar.classList.add("opened");
+            navbarToggle.setAttribute("aria-expanded", "true");
+        }
+    
+        function closeMobileNavbar() {
+            navbar.classList.remove("opened");
+            navbarToggle.setAttribute("aria-expanded", "false");
+        }
+    
+        navbarToggle.addEventListener("click", () => {
+            if (navbar.classList.contains("opened")) {
+                closeMobileNavbar();
+            } else {
+                openMobileNavbar();
+            }
+        });
+    
+        const navbarMenu = navbar.querySelector("#navbar-menu");
+        const navbarLinksContainer = navbar.querySelector(".navbar-links");
+    
+        navbarLinksContainer.addEventListener("click", (clickEvent) => {
+            clickEvent.stopPropagation();
+        });
+    
+        navbarMenu.addEventListener("click", closeMobileNavbar);
+    </script>
+
+    <div class="blog-content-section">
+        <h1 class="blog-title">Building a Discord bot that scales</h1>
+        <p class="blog-date">25 April 2023</p>
+        <br>
+        <div class="blog-content"><p>Many Discord bots are developed with the goal of becoming as big as possible, but this sort of growth comes with an interesting challenge. Different elements have to be considered than when making a bot designed to be used in just a few servers. This post will cover a few of the potential challenges that could arise and how to be ready for them.</p>
+<h2 id="storing-data">Storing Data</h2>
+<p>It is important to consider how you store data when developing a Discord bot, a good criteria for your data storage is:</p>
+<ul>
+<li>Can it handle thousands or even millions of user/server data?</li>
+<li>Can new features be easily added?</li>
+<li>Will it perform well under pressure?</li>
+</ul>
+<p>You should always use a database, and if you want to scale infinitely not SQLite. SQLite is great for small bots however, if you get to the stage where you need to shard your bot across multiple servers, an SQLite file only accessible on one server simply won&#39;t cut it, and your shards will need to share data.  </p>
+<p>MySQL/MariaDB is known to scale well, it is a good choice for your project from when it is small all the way up to possibly handling millions of records. That&#39;s not to say it&#39;s the only or best database solution, you should do research in to the database that will work well for your project and give you a developer experience that you enjoy.</p>
+<h2 id="sharding">Sharding</h2>
+<p>Sharding is an essential part of scaling a Discord bot, it&#39;s a mechanism provided by Discord for running your bot on multiple servers, with different connections to Discord, each shard handling it&#39;s own group of servers. </p>
+<p>You should make your bot be able to handle running multiple shards, by using the sharing solution for the Discord library you are developing with. However, it is important to note, that up until a certain point, running more than 1 shard is actually not neccesary and may place more resource load on your server (for example Discord starts a new process for each shard). But it is good to be prepared to deploy more shards at any time.</p>
+<p>Discord make it mandatory that you run at least 2 shards once your bot reaches 2500 servers, so you should make sure you are running more shards to be ready for that.</p>
+<h2 id="maintainable-code">Maintainable Code</h2>
+<p>If you want your Discord bot to go through many iterations, and stay up to date with the latest Discord features you need to make sure your codebase can be easily worked with to add new features and to update the Discord API library you work with.  </p>
+<p>If your code isn&#39;t written in a modular, understandable way, if you need to make modifications months or years down the line, especially with many modifications made on top of your original code already, it can become harder and harder to work with. </p>
+<p>You should make use of multiple files to organize your code, such as a folder with a seperate file for each command.</p>
+<h2 id="usability">Usability</h2>
+<p>This one may seem obvious, but as your bot grows, it will reach more and more people, and that means more people who won&#39;t understand how to use your bot. You should consider even the most simple things. Leave hints to your users on what to do, be as clear as possible, don&#39;t assume they know something.</p>
+<p>People who are setting up their first Discord server ever may use your bot, they won&#39;t know how Discord bots work, so don&#39;t make assumptions users have used bots before. For example, if your bot requires an ID of a channel or user to be provided by the user of the bot, new Discord users will have no idea how to get an ID, especially as it requires developer mode to be enabled in settings. If using an ID is your only option, you should provide a menu that explains how to get the ID. </p>
+<p>This is just an example, you should think about things that may seem obvious to you, but may not to everyone and be sure it is clear what to do to minimize confusion.</p>
+<h2 id="thanks-for-reading">Thanks for reading!</h2>
+<p>This article has hopefully helped you consider the challenges you may face in building a Discord bot that scales and think about how you may tackle them. Good luck on your journey of building the next big Discord bot! </p>
+</div>
+        <br>
+        <a class="explore-more-content" href="/blog" style>Explore more posts</a>
+    </div>
+
+    <div style="height:150px;overflow:hidden;background-color: rgb(44 47 51);">
+        <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height:100%;width:100%">
+            <path d="M-2.54,28.13 C143.62,210.69 298.81,-81.41 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                style="stroke:none;fill:#26272b"></path>
+        </svg>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="title">
+                    <h2>Bot-Hosting.net</h2>
+                    <p>Have you ever wished for a free, good quality Discord bot bot? If yes, Bot-Hosting.net is the host
+                        for you. We have built a host designed for Discord bots.</p>
+                </div>
+                <div class="link">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><i class="fa fa-angle-double-right"></i><a href="/about"> About</a></li>
+                        <li><i class="fa fa-angle-double-right"></i><a href="https://wiki.bot-hosting.net"> Knowledgebase</a></li>
+                        <li><i class="fa fa-angle-double-right"></i><a href="/legal"> Terms & Conditions and Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="copyright">
+                    <h5>Copyright 2023 ©. All Rights Reserved. Website developed by the Bot-Hosting.net team</h5>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
