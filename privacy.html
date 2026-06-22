@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<head>
+    <!doctype html>
+    <html lang="en">
+    <link rel="icon" type="image/png" href="/assets/img/bothosting2.png" />
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+    <link href="/assets/css/style_main.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css"
+        integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+    <noscript>JavaScript Not Supported !</noscript>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#1f02f9" />
+    <meta name="Language" content="en" />
+    <meta name="google-site-verification" content="vQuxUxYxP_RNLS3LHfKPGMFV_tNZWDTq3zWmxSjKaT4" />
+    <meta name="keywords" content="hosting,host,discord,discord bots" />
+    <meta property="og:type" content="website" />
+    <meta name="description"
+        content="A host designed for Discord bots. Available and online 24/7. Free Discord bot hosting with powerful machines. Easy to setup and launches instantly." />
+    <meta name="author" content="Bot-Hosting.net | A Free Host For Discord Bots">
+    <meta property="og:title" content="Bot-Hosting.net | A Free Host For Discord Bots" />
+    <meta property="og:site_name" content="Bot-Hosting.net | A Free Host For Discord Bots" />
+    <meta property="og:url" content="bot-hosting.net" />
+    <meta property="og:image" content="/assets/img/bothosting2.png" />
+    <meta property="og:description"
+        content="A host designed for Discord bots. Available and online 24/7. Free Discord bot hosting with powerful machines. Easy to setup and launches instantly." />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@bothosting" />
+    <meta name="twitter:title" content="Bot-Hosting.net | A Free Host For Discord Bots" />
+    <meta name="twitter:description"
+        content="A host designed for Discord bots. Available and online 24/7. Free Discord bot hosting with powerful machines. Easy to setup and launches instantly." />
+    <meta name="apple-mobile-web-app-title" content="Bot-Hosting.net | A Free Host For Discord Bots" />
+    <meta name="application-name"
+        content="A host designed for Discord bots. Available and online 24/7. Free Discord bot hosting with powerful machines. Easy to setup and launches instantly." />
+    <title>Bot-Hosting.net | A Free Host For Discord Bots</title>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S0VHSF9NEZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-S0VHSF9NEZ');
+    </script>
+
+    </html>
+</head>
+<header id="navbar">
+    <nav class="navbar-container container">
+        <a href="/" class="home-link">
+            <div class="navbar-logo"><img src="/assets/img/bothosting.png" alt=""></div>
+            Bot-Hosting.net
+        </a>
+        <button type="button" class="navbar-toggle" aria-controls="navbar-menu" aria-label="Toggle menu"
+            aria-expanded="false">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <div id="navbar-menu">
+            <ul class="navbar-links">
+                <li class="navbar-item"><a class="navbar-link" href="/">Home</a></li>
+                <li class="navbar-item"><a class="navbar-link" href="/blog">Blog</a></li>
+                <li class="navbar-item" style="background-color: #2970cc; border-radius: 5px;"><a class="navbar-link"
+                        href="/panel" style>Get Started</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<div class="cookie-container">
+    <p>We use cookies to give you the best experience on our site. Read our <a href="/legal">legal
+            mentions</a> for further informations.</p>
+    <button class="cookie-btn">Okay</button>
+</div>
+<script src="../assets/js/cookie.js"></script>
+<script>
+    const navbar = document.getElementById("navbar");
+    const navbarToggle = navbar.querySelector(".navbar-toggle");
+
+    function openMobileNavbar() {
+        navbar.classList.add("opened");
+        navbarToggle.setAttribute("aria-expanded", "true");
+    }
+
+    function closeMobileNavbar() {
+        navbar.classList.remove("opened");
+        navbarToggle.setAttribute("aria-expanded", "false");
+    }
+
+    navbarToggle.addEventListener("click", () => {
+        if (navbar.classList.contains("opened")) {
+            closeMobileNavbar();
+        } else {
+            openMobileNavbar();
+        }
+    });
+
+    const navbarMenu = navbar.querySelector("#navbar-menu");
+    const navbarLinksContainer = navbar.querySelector(".navbar-links");
+
+    navbarLinksContainer.addEventListener("click", (clickEvent) => {
+        clickEvent.stopPropagation();
+    });
+
+    navbarMenu.addEventListener("click", closeMobileNavbar);
+</script>
+<style>
+    body {
+        background: #2c2f33 !important;
+    }
+</style>
+
+<body>
+    <div class="about">
+        <article>
+            <h1 style="align-content: center;">Bot-Hosting.net Privacy Policy</h1>
+            <h5 style="align-content: center;">Handling your data responsibly and ethically is a top priority for us,
+                when using our services you agree that we can process certain data as set out in this article.</h5>
+            <p style="color: rgb(189, 189, 189);">Last updated: 18/06/2023</p>
+            <br>
+            <h2>1. The data we collect</h2>
+            <p>We may collect certain data neccesary for our business operations. Data we may process and store:</p>
+            <ul style="list-style-type: disc; font-size: 18px; margin-top: 15px; margin-left: 5px;">
+                <li>Your internet protocol (IP) address - used to prevent abuse of our service and for analytics</li>
+                <li>Your Discord ID & username - used for linking to your account</li>
+                <li>Your email address - used for account recovery and contacting users</li>
+                <li>Data you upload or store on our services</li>
+                <li>Data submitted by you in forms will be retained for the purpose stated for the form</li>
+                <li>Analytical data</li>
+            </ul>
+
+            <h2>2. Erasure of data</h2>
+            <p>All data we store is linked to accounts, by deleting your account <a href="/panel/settings">here</a>,
+                data associated with your account will be erased with the exception of:</p>
+            <ul style="list-style-type: disc; font-size: 18px; margin-top: 15px; margin-left: 5px;">
+                <li>A record of your Discord account having logged in to prevent abuse</li>
+                <li>Activity logs for servers not associated with your account and data uploaded to "servers" associated
+                    with other user's accounts</li>
+            </ul>
+
+            <h2>3. Payment data</h2>
+            <p>Our payments are handled by, Stripe, a reputable third-party provider, they are responsible for handling
+                all payment related information. Their legal agreements, including privacy policy, can be found at the
+                checkout page for payments.</p>
+
+            <h2>4. Third parties</h2>
+            <p>We make use of some third party services who may collect some data, including advertising partners. If an
+                advertising partner is collecting data, you will be shown a popup which you must accept with links to
+                their privacy policy before proceeding where you can find information about the data collected by our
+                partners.</p>
+
+            <br />
+            <p style="color: rgb(185, 185, 185);">Contact email address: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ea8985849e8b899eaa88859ec78285999e83848dc4848f9e">[email&#160;protected]</a></p>
+        </article>
+    </div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
