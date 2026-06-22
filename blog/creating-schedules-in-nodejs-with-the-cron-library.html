@@ -1,0 +1,172 @@
+<html>
+
+<head>
+    <title>Bot-Hosting.net | Blog</title>
+    <link rel="icon" type="image/png" href="/assets/img/bothosting2.png" />
+    <link rel="stylesheet" href="/blog/assets/styles.css">
+    <link rel="stylesheet" href="/assets/css/style_main.min.css">
+    <meta charset="UTF-8">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#1f02f9" />
+    <meta name="Language" content="en" />
+    <meta name="google-site-verification" content="vQuxUxYxP_RNLS3LHfKPGMFV_tNZWDTq3zWmxSjKaT4" />
+    <meta name="keywords" content="hosting,host,discord,discord bots,free hosting,blog" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Embed -->
+    <meta property="og:type" content="website" />
+    <meta name="description"
+        content="A host designed for Discord bots. Available and online 24/7. Free Discord bot hosting with powerful machines. Easy to setup and launches instantly." />
+    <meta name="author" content="Bot-Hosting.net | Blog">
+    <meta property="og:title" content="Creating Schedules in Node.js with the Cron library" />
+    <meta property="og:author" content="Bot-Hosting.net | Blog" />
+    <meta property="og:site_name" content="Bot-Hosting.net | Blog" />
+    <meta property="og:url" content="bot-hosting.net" />
+    <meta property="og:image" content="/assets/img/bothosting2.png" />
+    <meta property="og:description"
+        content="A host designed for Discord bots. Available and online 24/7. Free Discord bot hosting with powerful machines. Easy to setup and launches instantly." />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@bothosting" />
+    <meta name="twitter:title" content="Bot-Hosting.net | Blog" />
+    <meta name="twitter:author" content="Creating Schedules in Node.js with the Cron library" />
+    <meta name="twitter:description"
+        content="A host designed for Discord bots. Available and online 24/7. Free Discord bot hosting with powerful machines. Easy to setup and launches instantly." />
+    <meta name="apple-mobile-web-app-title" content="Bot-Hosting.net | Blog" />
+    <meta name="application-name"
+        content="A host designed for Discord bots. Available and online 24/7. Free Discord bot hosting with powerful machines. Easy to setup and launches instantly." />
+
+    <!-- Highlight js to highlight code -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github-dark-dimmed.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script defer>hljs.highlightAll();</script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header id="navbar">
+        <nav class="navbar-container container">
+            <a href="/" class="home-link">
+                <div class="navbar-logo"><img src="/assets/img/bothosting.png" alt=""></div>
+                Bot-Hosting.net
+            </a>
+            <button type="button" class="navbar-toggle" aria-controls="navbar-menu" aria-label="Toggle menu"
+                aria-expanded="false">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div id="navbar-menu">
+                <ul class="navbar-links">
+                    <li class="navbar-item"><a class="navbar-link" href="/">Home</a></li>
+                    <li class="navbar-item"><a class="navbar-link" href="/blog">Blog</a></li>
+                    <li class="navbar-item" style="background-color: #2970cc; border-radius: 5px;"><a
+                            class="navbar-link" href="/panel" style>Get Started</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <script>
+        const navbar = document.getElementById("navbar");
+        const navbarToggle = navbar.querySelector(".navbar-toggle");
+    
+        function openMobileNavbar() {
+            navbar.classList.add("opened");
+            navbarToggle.setAttribute("aria-expanded", "true");
+        }
+    
+        function closeMobileNavbar() {
+            navbar.classList.remove("opened");
+            navbarToggle.setAttribute("aria-expanded", "false");
+        }
+    
+        navbarToggle.addEventListener("click", () => {
+            if (navbar.classList.contains("opened")) {
+                closeMobileNavbar();
+            } else {
+                openMobileNavbar();
+            }
+        });
+    
+        const navbarMenu = navbar.querySelector("#navbar-menu");
+        const navbarLinksContainer = navbar.querySelector(".navbar-links");
+    
+        navbarLinksContainer.addEventListener("click", (clickEvent) => {
+            clickEvent.stopPropagation();
+        });
+    
+        navbarMenu.addEventListener("click", closeMobileNavbar);
+    </script>
+
+    <div class="blog-content-section">
+        <h1 class="blog-title">Creating Schedules in Node.js with the Cron library</h1>
+        <p class="blog-date">12 September 2023</p>
+        <br>
+        <div class="blog-content"><p>In your Node.js server, you may wish to run code at certain times, whether that be at the start of every month, at the start of every hour, at the twelth hour of every day or some other scheduled time.</p>
+<h2 id="the-nodejs-cron-library">The Node.js Cron Library</h2>
+<p>The Node.js Cron library provides a simple and powerful way to schedule recurring tasks in your Node.js applications. It allows you to define cron patterns to specify when and how often a task should run. Whether you need to send periodic emails, update database records, or perform any other repetitive task, the Node.js Cron library makes it easy to automate these processes at specific times.</p>
+<p>To get started, you&#39;ll need to install the Node.js Cron library using npm, the Node package manager (or a package manager of your choice). Open your terminal and run the following command:</p>
+<pre><code>npm install cron
+</code></pre>
+<p>Once installed, you can import the library in your Node.js application using the <code>require</code> function for CommonJS applications:</p>
+<pre><code class="language-js">const { CronJob } = require(&#39;cron&#39;);
+</code></pre>
+<p>Now, we can create a job to run at a set time. Suppose we want to log a message to the console every day at 8:00 AM. We can define a new CronJob instance with the desired cron pattern and the function to be executed:</p>
+<pre><code class="language-js">const job = new CronJob(&#39;0 8 * * *&#39;, () =&gt; {
+  console.log(&#39;Good morning! Have a nice day!&#39;);
+}, null, true, &#39;America/New_York&#39;);
+</code></pre>
+<p>Let&#39;s run through the parameters we are using here. The first parameter is the cron pattern (<code>&#39;0 8 * * *&#39;</code>). You can use tools such as <a href="https://crontab.guru">crontab</a> to help you write cron patterns.</p>
+<p>The second parameter is the function to run every time the cron job should execute. In our case we use an arrow function and call the <code>console.log</code> function to display a message in the terminal.</p>
+<p>The third parameter is an optional function that will be run if you ever stop the job with <code>job.stop()</code>. In our case we don&#39;t need this so it is set to <code>null</code>.</p>
+<p>The fourth parameter is a boolean value saying whether or not the job should automatically start. By setting it to true, the job will automatically start executing as soon as we create it, if it was not set to true we would have to call <code>job.start()</code> to start the job.</p>
+<p>Finally, the fifth parameter is the timezone, in our case we use the tme in New York to base our schedule on. Some examples of other timezone are <code>Europe/London</code>, <code>Europe/Paris</code>, <code>Australia/Sydney</code> and <code>Asia/Bangkok</code>.</p>
+<h2 id="important-notes">Important notes</h2>
+<p>Due to the libary being written in Node.js it may not run exactly as you expect compared to regular cron jobs.</p>
+<p>Some of the key things to note are:</p>
+<ul>
+<li>Months are indexed from 0-11 instead of 1-12 in the Node.js Cron library. This is different from Unix cron but is planned to be updated in the future.</li>
+<li>When using the library with JS Date or Luxon DateTime objects, there may be a delay in execution due to the time it takes for computers to process tasks. This delay is typically in the order of milliseconds. The library does not allow millisecond-level granularity for regular cron syntax, but you can specify a real date of execution using Date or Luxon DateTime objects.</li>
+</ul>
+<h2 id="why-use-the-nodejs-cron-library">Why use the Node.js cron library?</h2>
+<p>You may be wondering why you would want to use the Node.js cron library rather than registering normal cron jobs and the main reason is to enable you to easily run scheduled tasks within the same process as your main program. This means you can easily interact with the memory of your running program.</p>
+<p>Another reason is that it is easier for your code to automatically register schedules that will run as long as the program is running.</p>
+<h2 id="why-use-cron-jobs-at-all">Why use cron jobs at all?</h2>
+<p>You may be wondering why you should use Cron jobs over a simple <code>setInterval</code> and the answer is that it allows you to run a function at a certain guaranteed time. With <code>setInterval</code> if your program restarts your timer will also restart, whilst with Cron if your program restarts it will continue waiting for the next execution of the job.</p>
+</div>
+        <br>
+        <a class="explore-more-content" href="/blog" style>Explore more posts</a>
+    </div>
+
+    <div style="height:150px;overflow:hidden;background-color: rgb(44 47 51);">
+        <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height:100%;width:100%">
+            <path d="M-2.54,28.13 C143.62,210.69 298.81,-81.41 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                style="stroke:none;fill:#26272b"></path>
+        </svg>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="title">
+                    <h2>Bot-Hosting.net</h2>
+                    <p>Have you ever wished for a free, good quality Discord bot bot? If yes, Bot-Hosting.net is the host
+                        for you. We have built a host designed for Discord bots.</p>
+                </div>
+                <div class="link">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><i class="fa fa-angle-double-right"></i><a href="/about"> About</a></li>
+                        <li><i class="fa fa-angle-double-right"></i><a href="https://wiki.bot-hosting.net"> Knowledgebase</a></li>
+                        <li><i class="fa fa-angle-double-right"></i><a href="/legal"> Terms & Conditions and Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="copyright">
+                    <h5>Copyright 2023 ©. All Rights Reserved. Website developed by the Bot-Hosting.net team</h5>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
