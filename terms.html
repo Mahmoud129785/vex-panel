@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<head>
+    <!doctype html>
+    <html lang="en">
+    <link rel="icon" type="image/png" href="/assets/img/bothosting2.png" />
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+    <link href="/assets/css/style_main.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css"
+        integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+    <noscript>JavaScript Not Supported !</noscript>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#1f02f9" />
+    <meta name="Language" content="en" />
+    <meta name="google-site-verification" content="vQuxUxYxP_RNLS3LHfKPGMFV_tNZWDTq3zWmxSjKaT4" />
+    <meta name="keywords" content="hosting,host,discord,discord bots" />
+    <meta property="og:type" content="website" />
+    <meta name="description"
+        content="A host designed for Discord bots. Available and online 24/7. Free Discord bot hosting with powerful machines. Easy to setup and launches instantly." />
+    <meta name="author" content="Bot-Hosting.net | A Free Host For Discord Bots">
+    <meta property="og:title" content="Bot-Hosting.net | A Free Host For Discord Bots" />
+    <meta property="og:site_name" content="Bot-Hosting.net | A Free Host For Discord Bots" />
+    <meta property="og:url" content="bot-hosting.net" />
+    <meta property="og:image" content="/assets/img/bothosting2.png" />
+    <meta property="og:description"
+        content="A host designed for Discord bots. Available and online 24/7. Free Discord bot hosting with powerful machines. Easy to setup and launches instantly." />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@bothosting" />
+    <meta name="twitter:title" content="Bot-Hosting.net | A Free Host For Discord Bots" />
+    <meta name="twitter:description"
+        content="A host designed for Discord bots. Available and online 24/7. Free Discord bot hosting with powerful machines. Easy to setup and launches instantly." />
+    <meta name="apple-mobile-web-app-title" content="Bot-Hosting.net | A Free Host For Discord Bots" />
+    <meta name="application-name"
+        content="A host designed for Discord bots. Available and online 24/7. Free Discord bot hosting with powerful machines. Easy to setup and launches instantly." />
+    <title>Bot-Hosting.net | A Free Host For Discord Bots</title>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S0VHSF9NEZ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-S0VHSF9NEZ');
+    </script>
+
+    </html>
+</head>
+<header id="navbar">
+    <nav class="navbar-container container">
+        <a href="/" class="home-link">
+            <div class="navbar-logo"><img src="/assets/img/bothosting.png" alt=""></div>
+            Bot-Hosting.net
+        </a>
+        <button type="button" class="navbar-toggle" aria-controls="navbar-menu" aria-label="Toggle menu"
+            aria-expanded="false">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <div id="navbar-menu">
+            <ul class="navbar-links">
+                <li class="navbar-item"><a class="navbar-link" href="/">Home</a></li>
+                <li class="navbar-item"><a class="navbar-link" href="/blog">Blog</a></li>
+                <li class="navbar-item" style="background-color: #2970cc; border-radius: 5px;"><a class="navbar-link"
+                        href="/panel" style>Get Started</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<div class="cookie-container">
+    <p>We use cookies to give you the best experience on our site. Read our <a href="/legal">legal
+            mentions</a> for further informations.</p>
+    <button class="cookie-btn">Okay</button>
+</div>
+<script src="../assets/js/cookie.js"></script>
+<script>
+    const navbar = document.getElementById("navbar");
+    const navbarToggle = navbar.querySelector(".navbar-toggle");
+
+    function openMobileNavbar() {
+        navbar.classList.add("opened");
+        navbarToggle.setAttribute("aria-expanded", "true");
+    }
+
+    function closeMobileNavbar() {
+        navbar.classList.remove("opened");
+        navbarToggle.setAttribute("aria-expanded", "false");
+    }
+
+    navbarToggle.addEventListener("click", () => {
+        if (navbar.classList.contains("opened")) {
+            closeMobileNavbar();
+        } else {
+            openMobileNavbar();
+        }
+    });
+
+    const navbarMenu = navbar.querySelector("#navbar-menu");
+    const navbarLinksContainer = navbar.querySelector(".navbar-links");
+
+    navbarLinksContainer.addEventListener("click", (clickEvent) => {
+        clickEvent.stopPropagation();
+    });
+
+    navbarMenu.addEventListener("click", closeMobileNavbar);
+</script>
+<style>
+    body {
+        background: #2c2f33 !important;
+    }
+</style>
+
+<body>
+    <div class="about">
+        <article>
+            <h1 style="align-content: center;">Bot-Hosting.net Terms & Conditions</h1>
+            <h5 style="align-content: center;">When using our services you agree to our terms of service set out in this
+                article.</h5>
+            <p style="color: rgb(189, 189, 189);">Last updated: 18/06/2023</p>
+            <br>
+            <h2>1. Definitions</h2>
+            <ul style="list-style-type: disc; font-size: 18px; margin-top: 15px; margin-left: 10px;">
+                <li>"Server"/"servers" refers to the service we provide with programs executing within containers and
+                    the data associated with that container.</li>
+                <li>"We", "us" and "our" refer to the entity of Bot-Hosting.net</li>
+                <li>The terms "user", "client", "customer", "your" and "you" refer to you as a visitor of
+                    Bot-Hosting.net</li>
+                <li>Anything related to "your servers" or similar, refers to servers which you have access to, including
+                    as a sub-user.</li>
+            </ul>
+
+            <h2>2. Rights we reserve</h2>
+            <p>We reserve certain rights:</p>
+            <ul style="list-style-type: disc; font-size: 18px; margin-top: 15px; margin-left: 10px;">
+                <li>To suspend your access to our services at any time as we see fit.</li>
+                <li>To modify data associated with your account such as our server billing currency "coins" as we see
+                    fit. </li>
+                <li>To erase or suspend access to data associated with your servers including files and databases</li>
+                <li>To process data/files uploaded by you to your servers as is neccesary for our legal and safe
+                    operation and to provide the best service we can.</li>
+            </ul>
+
+            <h2>3. Limited liability</h2>
+            <p>Bot-Hosting.net should not be held liable for incidents such as but not limited to hardware failure,
+                fire/water damage and downtime. We recommend users to take off-site backups for important data in case
+                of an unlikely data loss. </p>
+
+            <h2>4. Acceptable Use Policy</h2>
+            <p>All users must conform with our acceptable use policy, failure to do so may result in your access to our
+                services being revoked/suspended. Activities that are considered not acceptable include:</p>
+            <ul style="list-style-type: disc; font-size: 18px; margin-top: 15px; margin-left: 10px;">
+                <li>Illegal activities/knowingly handling illegal content - including activities illegal in the United
+                    Kingdom of Great Britain and Northern Ireland and the user's current country they reside in.</li>
+                <li>Activities designed to consume computational resources such as crypto currency mining or
+                    purposefully excessively consuming disk space unnecesarily.</li>
+                <li>Attempts to DDoS/cause harm to other individuals or businesses.</li>
+                <li>Running scanners that scan the internet, for example checking every IP address for a certain service
+                    running.</li>
+                <li>Running bruteforce/password guessing attacks off of our services.</li>
+            </ul>
+            <p>All users must comply with our <a href="/acceptable-use" style="color: rgb(142, 169, 204);">Acceptable Use Policy</a>, which forms an integral part of these Terms. The Acceptable Use Policy describes in detail the activities permitted and prohibited on our services, including illegal content, abuse of third-party platforms, attacks, resource abuse, harmful content, and fraud. Failure to comply with the Acceptable Use Policy may result in suspension or termination of your access to our services, with or without prior notice.</p>
+
+            <h2>5. Promotions</h2>
+            <p>We may run promotional offers, however we do not guarantee that promotions will always be usable and we
+                reserve the right to cancel any promotional offer at any time or modify it's terms. </p>
+
+            <h2>6. Payments, Refunds, Disputes and Cancellations</h2>
+            <p>We offer a 24 hour refund policy, users can contact us within our Discord server through our ticket
+                system or via email where applicable to request a refund. If 24 hours has passed since a payment was
+                made we maintain the right to refuse a refund for any reason.</p>
+            <p>We reserve the right to refuse a refund, even within the 24-hour refund time, if any form of payment
+                dispute/chargeback has been filed. We have a no-tolerance policy towards chargebacks/disputes, if there
+                is any issue with our service you should reach out to us directly. If a chargeback/dispute is filed on a
+                payment associated with your account, we will terminate/suspend your access to our services.</p>
+            <p>If we are unable to provide our service, we may refund a payment even after 24 hours, although we do not
+                guarantee we will do this depending on the circumstances.</p>
+            <br>
+            <p>If a service from us is cancelled by the user, we do not offer refunds based on remaining time of the
+                service. For recurring payments/subscriptions, upon cancelling a service, users should take care to
+                ensure their subscription is cancelled with the payment gateway the subscription was processed with.</p>
+
+            <h2>6. Account/service deletion</h2>
+            <p>If you delete your account or a service provided by us, you accept that the associated data will be
+                erased, and we do not guarantee we will/can recover it. This includes paid services/goods that are
+                chosen to be deleted by the user. Users accept that deleting their account will delete all associated
+                services/goods.</p>
+
+            <br />
+            <p style="color: rgb(185, 185, 185);">Contact email address: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b6d5d9d8c2d7d5c2f6d4d9c29bded9c5c2dfd8d198d8d3c2">[email&#160;protected]</a></p>
+        </article>
+    </div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
